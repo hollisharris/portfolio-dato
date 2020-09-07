@@ -16,7 +16,19 @@ module.exports = {
         name: `hollis-harris-portfolio`,
         short_name: `portfolio`,
         start_url: `/`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icons: [
+          {
+            src: `/favicon-32x32.png`,
+            sizes: `32x32`,
+            type: `image/png`,
+          },
+          {
+            src: `/favicon-260x260.png`,
+            sizes: `260x260`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     `gatsby-plugin-sass`,
