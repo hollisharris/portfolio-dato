@@ -1,22 +1,99 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import Hero from "../components/Hero"
+import PageComponents from "../components/PageComponents"
+
+const IndexPage = ({data}) => {
+  const doc = data.datoCmsLanding
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Hero teaser={doc.teaser} headline={doc.headline} className="home"/>
+      <PageComponents components={doc.components} />
+    </Layout>
+  )
+}
 
 export default IndexPage
+
+export const query = graphql`
+{
+  datoCmsLanding(slug: {eq: "home"}) {
+    headline
+    teaser
+    shortDescription
+    components {
+      ... on DatoCmsContentBlock {
+        id
+        splitContent
+        sticky
+        teaser
+        content
+        contentPosition
+        model {
+          name
+        }
+        media {
+          fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+            ...GatsbyDatoCmsFluid
+          }
+          isImage
+          filename
+          alt
+          title
+        }
+      }
+      ... on DatoCmsGridList {
+        id
+        headline
+        darkBackground
+        listing
+        model {
+          name
+        }
+      }
+      ... on DatoCmsFeaturedWork {
+        id
+        headline
+        model {
+          name
+        }
+        work {
+          id
+          shortDescription
+          teaser
+          slug
+          thumbnail {
+            fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
+            }
+            isImage
+            filename
+            alt
+            title
+          }
+        }
+      }
+      ... on DatoCmsCtaBlock {
+        id
+        teaser
+        headline
+        description
+        model {
+          name
+        }
+        link {
+          ... on DatoCmsContact {
+          	slug
+          }
+        }
+      }
+    }
+  }
+}
+`

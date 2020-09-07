@@ -1,0 +1,51 @@
+// Breakpoints
+$large: 75em;
+$medium: 64em;
+$small: 48em;
+
+
+// Column Widths
+$column1: 8.3333%;
+$column2: 16.6667%;
+$column3: 25%;
+$column4: 33.3333%;
+$column5: 41.6667%;
+$column6: 50%;
+$column7: 58.3333%;
+$column8: 66.6667%;
+$column9: 75%;
+$column10: 83.3333%;
+$column11: 91.6667%;
+$column12: 100%;
+
+// Utilities
+$container: 1400px;
+
+.container {
+    max-width: $container;
+}
+
+.breakout {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.row {
+    margin: 0;
+}
+
+.start-xs,
+.end-xs,
+.center-xs {
+    text-align: left;
+}
+
+section {
+    padding: 8rem 0 0;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}

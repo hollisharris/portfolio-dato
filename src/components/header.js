@@ -1,42 +1,56 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  const { datoCmsGlobal } = useStaticQuery(query);
+  const [menuOpen, setMenu] = useState(false);
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  const toggleMenu = () => {
+    setMenu(!menuOpen)
+  }
 
-Header.defaultProps = {
-  siteTitle: ``,
+  const links = datoCmsGlobal.navigation.map(item => {
+    return <Link partiallyActive={true} activeClassName="active" to={`/${item.slug}`} key={item.slug}>{item.navigationText}</Link>
+  })
+
+  return (
+    <header>
+      <nav className="row middle-xs">
+        <div className="col-xs col-sm start-xs brand">
+          <h1>
+            <Link to="/">
+              <img src={'/logo-light.svg'} alt='Hollis Harris' />
+            </Link>
+          </h1>
+        </div>
+        <button className="menu-toggle" onClick={toggleMenu}>{menuOpen ? 'Close' : 'Menu'}</button>
+        <menu className={`${menuOpen ? 'open' : 'close'} col-xs-12 col-md end-xs`}>
+          {links}
+        </menu>
+      </nav>
+    </header>
+  )
 }
 
 export default Header
+
+const query = graphql`
+  query Global {
+    datoCmsGlobal {
+      navigation {
+        ... on DatoCmsContact {
+          navigationText
+          slug
+        }
+        ... on DatoCmsLanding {
+          navigationText
+          slug
+        }
+      }
+      logo {
+        url
+        alt
+      }
+    }
+  }
+`

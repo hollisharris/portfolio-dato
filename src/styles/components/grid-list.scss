@@ -1,0 +1,26 @@
+.grid-list {
+    padding-bottom: 5.5rem;
+
+    .column-item {
+        padding-bottom: 3.5rem;
+        margin-top: .85rem;
+        padding-right: 2rem;
+
+        h3 {
+            font-variation-settings: 'wght' 900;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            margin-bottom: .85rem;
+
+            span.text-light {
+                margin-right: .65rem;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+        
+    }
+
+}

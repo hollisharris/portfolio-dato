@@ -1,0 +1,12 @@
+.hero {
+    padding-top: 8rem;
+    padding-bottom: 0;
+
+    &.short {
+        padding-top: 4rem;
+    }
+
+    & + .media-columns {
+        margin-top: 4rem;
+    }
+}

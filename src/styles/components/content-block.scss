@@ -1,0 +1,41 @@
+.content-block {
+    h2 {
+        margin-bottom: 2rem;
+    }
+    h3 {
+        margin-bottom: 1.25rem;
+    }
+    p {
+        color: $text-light;
+    }
+    
+    video {
+        width: 100%;
+    }
+
+    &.sticky .content-container {
+        @media screen and (min-width: $large) {
+            position: sticky;
+            top: 3rem;
+            align-self: flex-start;
+        }
+    }
+
+    &.split {
+        .text-teaser {
+            margin-top: .5rem;
+            padding-top: .7rem;
+            border-top: 1px solid $line;
+        }
+    }
+
+    & + .grid-list {
+        margin-top: 8rem;
+    }
+    & + .media-columns{
+        margin-top: 2.5rem;
+    }
+    &.sticky + .media-columns{
+        margin-top: 4rem;
+    }
+}

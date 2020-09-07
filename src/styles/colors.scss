@@ -1,0 +1,47 @@
+// $text-light: hsla(0,0,0,.52);
+$text-light: #666665;
+// $text-dark: #1D1D1F;
+// $text-dark: #2e3c40;
+$text-dark: #1a1a1a; // Like
+// $text-dark: #023047; // Like
+// $text-dark: #042a38; // Like
+$line: rgba(0, 0, 0, 0.2);
+$line-light: #e3e4e5;
+// $bg-light: rgb(243,243,243);
+// $bg-light: #fff;
+$bg-light: rgb(247,246,244);
+
+body, html {background: $bg-light;}
+
+.text-light { color: $text-light; }
+.text-dark { color: $text-dark; }
+
+.bg-light { background-color: rgb(249, 249, 249);}
+
+.teaser {
+    color: $text-light;
+}
+
+.bg-darker {
+    background-color: #1e1e1e;
+}
+
+.bg-dark {
+    background-color: $text-dark;
+
+    h1,h2,h3,h4,h5,h6,
+    .h1,.h2,.h3,.h4,.h5,.h6,
+    .text-dark { color: rgba(255,255,255,1); }
+
+    p,
+    .text-light,
+    .teaser,
+    a:hover {
+        color: rgba(255,255,255,.6);
+    }
+
+    a.line-hover:after {
+        background-color: rgba(255,255,255,.2);
+    }
+
+}

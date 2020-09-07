@@ -1,0 +1,19 @@
+.works {
+    .works-mosaic {
+        padding-top: 4rem;
+    }
+}
+
+.work {
+    .content-block {
+        p {
+            margin-bottom: 1.25rem;
+        }
+
+        p,
+        li {
+          color: $text-dark;
+          
+        }
+    }
+}

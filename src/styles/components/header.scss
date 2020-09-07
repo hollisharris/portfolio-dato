@@ -1,0 +1,72 @@
+header {
+    padding: 1rem 0;
+    background-color: $bg-light;
+ 
+    nav {
+        .brand {
+            img {
+                max-width: 8rem;
+
+                @media screen and (min-width: $medium) {
+                    max-width: 10rem;
+                }
+            }
+
+        }
+        .menu-toggle {
+            background: none;
+            padding: .5rem;
+            margin: 0;
+            border: 0;
+
+            @media screen and (min-width: $medium) {
+                display: none;
+            }
+        }
+
+        menu {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            transition: .8s height ease;
+            padding-top: 2rem;
+            height: 0;
+
+            @media screen and (min-width: $medium) {
+                display: flex;
+                width: 50%;
+                position: static;
+                justify-content: flex-end;
+            }
+
+            &.open {
+                background-color: $bg-light;
+                height: 100%;
+            }
+
+            &.close {
+                overflow: hidden;
+            }
+
+            a {
+                display: block;
+                text-decoration: none;
+                position: relative;
+                font-variation-settings: 'wght' 600;
+                font-weight: 600;
+                padding: 1.85rem 0;
+                border-bottom: 1px solid $line;
+
+                
+                @media screen and (min-width: $medium) {
+                    margin-left: 2rem;
+
+                    &:not(.active) {
+                        color: $text-light;
+                    }
+                }
+            }
+          
+        }
+    }
+}
