@@ -38,7 +38,7 @@ const PageComponents = ({components}) => {
                             key={component.id}
                             />
                 case 'Media Column':
-                    return <Columns
+                    return  <Columns
                             media={component.media}
                             desktop={component.desktop}
                             mobile={component.mobile}

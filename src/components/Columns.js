@@ -1,4 +1,5 @@
 import React from "react"
+import LazyLoad from 'react-lazyload'
 import Img from 'gatsby-image'
 
 const Columns = ({media, desktop, mobile}) => {
@@ -18,7 +19,7 @@ const Columns = ({media, desktop, mobile}) => {
             return (
                 <div key={index} className={`media-column col-xs-${makeClasses(mobile)} col-md-${makeClasses(desktop)}`}>
                     <figure>
-                        <Img fluid={media.fluid} alt={media.alt} />
+                    <LazyLoad height={'100%'} offset={100} once ><Img fluid={media.fluid} alt={media.alt} /></LazyLoad>
                         {media.title && <figcaption className="text-xs text-light">{media.title}</figcaption>}
                     </figure>
                 </div>
@@ -27,9 +28,9 @@ const Columns = ({media, desktop, mobile}) => {
             return (
                 <div key={index} className={`media-column col-xs-${makeClasses(mobile)} col-md-${makeClasses(desktop)}`}>
                     <figure>
-                        <video muted autoPlay loop poster={media.video.thumbnailUrl} title={media.title}>
+                        <LazyLoad height={'100%'} offset={100} once ><video muted autoPlay loop playsinline poster={media.video.thumbnailUrl} title={media.title}>
                             <source src={media.video.mp4Url} type="video/mp4" />
-                        </video>
+                        </video></LazyLoad>
                         {media.title && <figcaption className="text-xs text-light">{media.title}</figcaption>}
                     </figure>
                 </div>

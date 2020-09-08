@@ -8,7 +8,7 @@ import PageComponents from "../components/PageComponents"
 
 const WorkTemplate = ({data}) => {
   const doc = data.datoCmsWork
-  console.log(doc)
+  // console.log(doc)
 
   return (
     <Layout className="work">

@@ -4,14 +4,17 @@ header {
  
     nav {
         .brand {
-            img {
+            @media screen and (min-width: $medium) {
+                margin-left: 1rem;
+            }
+            
+            svg {
                 max-width: 8rem;
 
                 @media screen and (min-width: $medium) {
                     max-width: 10rem;
                 }
             }
-
         }
         .menu-toggle {
             background: none;

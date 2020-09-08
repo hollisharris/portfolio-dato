@@ -32,10 +32,11 @@
     & + .grid-list {
         margin-top: 8rem;
     }
-    & + .media-columns{
+    & + .media-columns,
+    .media-container:not(.col-lg-6) {
         margin-top: 2.5rem;
     }
-    &.sticky + .media-columns{
+    &.sticky + .media-columns {
         margin-top: 4rem;
     }
 }
