@@ -66,6 +66,7 @@ export const query = graphql`
         work {
           id
           shortDescription
+          position
           teaser
           slug
           thumbnail {

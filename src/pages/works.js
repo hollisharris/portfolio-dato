@@ -11,6 +11,7 @@ import PageComponents from "../components/PageComponents"
 const Works = ({data}) => {
   const works = data.allDatoCmsWork
   const doc = data.datoCmsLanding
+  console.log(works)
 
   const workList = works.edges.map(item => {
       return ({
@@ -36,13 +37,14 @@ export default Works
 
 export const query = graphql`
 {
-    allDatoCmsWork {
+    allDatoCmsWork(sort: {fields: position}) {
         edges {
             node {
                 teaser
                 shortDescription
                 id
                 slug
+                position
                 thumbnail {
                     fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
                         ...GatsbyDatoCmsFluid

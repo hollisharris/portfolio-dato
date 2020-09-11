@@ -8,17 +8,17 @@ const WorksMosaic = ({headline, works}) => {
     if(!works) return null
 
     const sizes = [
-        "col-md-4 landscape-small",
-        "col-md-4 portrait-large",
-        "col-md-3 portrait-small",
-        "col-md-6 landscape-large"
+        "col-md-5 landscape-small",
+        "col-md-5 col-lg-offset-2 portrait-large",
+        "col-md-4 portrait-small",
+        "col-md-7 col-lg-offset-1 landscape-large"
     ]
 
     const workList = works.map((work,index) => {
         const   teaser      = work.teaser,
                 headline    = work.shortDescription,
                 fullSlug    = work.slug,
-                thumbnail  = work.thumbnail;
+                thumbnail   = work.thumbnail;
     
         let counter;
         if(sizes[index]) {
