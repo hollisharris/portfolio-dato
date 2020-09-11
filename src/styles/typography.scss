@@ -4,55 +4,63 @@
     font-style: normal;
     font-variation-settings:'wght' 500;
     font-variation-ligatures:normal;
-    font-weight: 200 800
+    font-weight: 200 800;
+    font-display: swap;
 }
 
 @font-face {
     font-family: Manrope;
     src: url(../fonts/web/Manrope-ExtraLight.woff2) format("woff2");
-    font-weight: 200
+    font-weight: 200;
+    font-display: swap;
 }
 
 @font-face {
     font-family: Manrope;
     src: url(../fonts/web/Manrope-Light.woff2) format("woff2");
-    font-weight: 300
+    font-weight: 300;
+    font-display: swap;
 }
 
 @font-face {
     font-family: Manrope;
     src: url(../fonts/web/Manrope-Regular.woff2) format("woff2");
-    font-weight: 400
+    font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: Manrope;
     src: url(../fonts/web/Manrope-Medium.woff2) format("woff2");
-    font-weight: 500
+    font-weight: 500;
+    font-display: swap;
 }
 
 @font-face {
     font-family: Manrope;
     src: url(../fonts/web/Manrope-SemiBold.woff2) format("woff2");
-    font-weight: 600
+    font-weight: 600;
+    font-display: swap;
 }
 
 @font-face {
     font-family: Manrope;
     src: url(../fonts/web/Manrope-Bold.woff2) format("woff2");
-    font-weight: 700
+    font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
     font-family: Manrope;
     src: url(../fonts/web/Manrope-ExtraBold.woff2) format("woff2");
-    font-weight: 800
+    font-weight: 800;
+    font-display: swap;
 }
 
 *,
 html,
 body {
-    font-family: 'Manrope VF',Manrope;
+    font-family: 'Manrope VF', Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     // font-variation-settings: 'wght' 500;
     font-display: swap;
 }
@@ -122,10 +130,10 @@ h3,
 p,
 .text-reg,
 li {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-variation-settings: 'wght' 400;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.7;
     letter-spacing: 0;
 }
 
